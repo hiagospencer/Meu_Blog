@@ -94,7 +94,7 @@
     <div class="row flex-nowrap justify-content-between align-items-center">
       
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Hiago Souza</a>
+        <a class="blog-header-logo text-dark" href="{% url 'blog_app:blog' %}">Hiago Souza</a>
       </div>
       
     </div>
@@ -103,11 +103,10 @@
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" href="#">Esportes</a>
-      <a class="p-2 link-secondary" href="#">Noticías</a>
+      <a class="p-2 link-secondary" href="#">Notícias</a>
       <a class="p-2 link-secondary" href="#">Cinema</a>
-      <a class="p-2 link-secondary" href="#">Tecnología</a>
-      <a class="p-2 link-secondary" href="#">Mercado</a>
-      <a class="p-2 link-secondary" href="#">Viagem</a>
+      <a class="p-2 link-secondary" href="#">Tecnologia e Jogos</a>
+      <a class="p-2 link-secondary" href="#">Finanças</a>
     </nav>
   </div>
 </div>
@@ -116,48 +115,8 @@
 
   
 
- <div class="p-4 p-md-5 mb-4 rounded text-bg-dark">
-    <div class="col-md-6 px-0">
-      <h1 class="display-4 fst-italic">{{ blog.titulo }}</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white fw-bold">Continue reading...</a></p>
-    </div>
-   
-  </div> 
+ {% comment "" %} Colocar um carroseu aqui para fazer propragandas {% endcomment %}
 
-  <div class="row mb-2">
-    <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-primary">Esportes</strong>
-          <h3 class="mb-0">{{ blog.titulo }}</h3>
-          <div class="mb-1 text-muted">{{ blog.data }}</div>
-          <p class="card-text mb-auto">{{ blog.mini_descricao }}</p>
-          <a href="#" class="stretched-link">Continue lendo...</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="{{ blog.image.url }}" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-        </div>
-      </div>
-    </div> 
-
-     <div class="col-md-6">
-      <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-        <div class="col p-4 d-flex flex-column position-static">
-          <strong class="d-inline-block mb-2 text-success">Design</strong>
-          <h3 class="mb-0">Post title</h3>
-          <div class="mb-1 text-muted">Nov 11</div>
-          <p class="mb-auto">This is a wider card with supporting text below as a natural lead-in to additional content.</p>
-          <a href="#" class="stretched-link">Continue reading</a>
-        </div>
-        <div class="col-auto d-none d-lg-block">
-          <svg class="bd-placeholder-img" width="200" height="250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"/><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
-
-        </div>
-      </div>
-    </div>
-  </div> 
 
   <div class="row g-5">
     <div class="col-md-8">
@@ -171,11 +130,30 @@
         <p class="blog-post-meta">{{ blog.data }} Por: <strong>{{ blog.autor }}</strong></p>
 
         <img src="{{ blog.image.url }}" class="img-fluid" width="500" height="250">
-        <p>{{ blog.mini_descricao }}</p>
+        <br><br>
+        <p class="fs-5">{{ blog.mini_descricao }}</p>
         <a href="{% url 'blog_app:detalhes' blog.id %}" class="stretched-link">Continuar Lendo...</a>
         <hr>
         
         {% endfor %}
+
+      <ul class="pagination justify-content-center">
+
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">&laquo;Primeira</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Anterior</a></li>
+        {% endif %}
+
+        <li class="page-item">
+          <span class="page-link">Página: {{page_obj.number}}</span>
+        </li>
+
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page.number }}">Próximo</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.number_pages }}">Última&raquo;</a></li>
+        {% endif %}
+      </ul>    
+
       </article>
     </div>
     

@@ -94,23 +94,22 @@
     <div class="row flex-nowrap justify-content-between align-items-center">
       
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="#">Hiago Souza</a>
+        <a class="blog-header-logo text-dark" href="{% url 'blog_app:blog' %}">Hiago Souza</a>
       </div>
       
     </div>
   </header>
 
-  <div class="nav-scroller py-1 mb-2">
+<div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
       <a class="p-2 link-secondary" href="#">Esportes</a>
-      <a class="p-2 link-secondary" href="#">Noticías</a>
+      <a class="p-2 link-secondary" href="#">Notícias</a>
       <a class="p-2 link-secondary" href="#">Cinema</a>
-      <a class="p-2 link-secondary" href="#">Tecnología</a>
-      <a class="p-2 link-secondary" href="#">Mercado</a>
-      <a class="p-2 link-secondary" href="#">Viagem</a>
+      <a class="p-2 link-secondary" href="#">Tecnologia e Jogos</a>
+      <a class="p-2 link-secondary" href="#">Finanças</a>
     </nav>
   </div>
-</div>
+ </div>
 
 <main class="container">
 
@@ -127,7 +126,7 @@
 
         <img src="{{ object.image.url }}" class="img-fluid">
         <br><br>
-          <p class="fs-4">{{ object.descricao }}</p>
+          <p class="fs-4">{{ object.descricao | safe}}</p>
         <hr>
 
       </article>
