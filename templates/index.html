@@ -105,7 +105,7 @@
       <a class="p-2 link-secondary" href="{% url 'blog_app:sports' %}">Esportes</a>
       <a class="p-2 link-secondary" href="{% url 'blog_app:cinema' %}">Cinema</a>
       <a class="p-2 link-secondary" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
-      <a class="p-2 link-secondary" href="{% url 'blog_app:financia' %}">Finanças</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:financas' %}">Finanças</a>
     </nav>
   </div>
 </div>
@@ -123,10 +123,10 @@
         Principais notícias.
       </h3>
 
-      {% for blog in object_list %}
+      {% for blog in post_blog%}
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">{{ blog.titulo }}</h2>
-        <p class="blog-post-meta">{{ blog.data }} Por: <strong>{{ blog.autor }}</strong></p>
+        <p class="blog-post-meta">Por: <strong>{{ blog.autor }}</strong>. há {{ blog.data|timesince }} atrás.</p>
 
         <img src="{{ blog.image.url }}" class="img-fluid" width="500" height="250">
         <br><br>

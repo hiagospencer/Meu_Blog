@@ -105,7 +105,7 @@
       <a class="p-2 link-secondary" href="{% url 'blog_app:sports' %}">Esportes</a>
       <a class="p-2 link-secondary" href="{% url 'blog_app:cinema' %}">Cinema</a>
       <a class="p-2 link-secondary" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
-      <a class="p-2 link-secondary" href="{% url 'blog_app:financia' %}">Finanças</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:financas' %}">Finanças</a>
     </nav>
   </div>
  </div>
@@ -124,7 +124,7 @@
       <article class="blog-post">
         {% for tecnologia in categoria_tecnologia %}
         <h2 class="blog-post-title mb-1">{{ tecnologia.titulo }}</h2>
-        <p class="blog-post-meta">{{ tecnologia.data }} Por: <strong>{{ tecnologia.autor }}</strong></p>
+        <p class="blog-post-meta">Por: <strong>{{ tecnologia.autor }}</strong>. há {{ tecnologia.data|timesince }} atrás.</p>
 
         <img src="{{ tecnologia.image.url }}" class="img-fluid" width="500" height="250">
         <br><br>

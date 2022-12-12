@@ -105,7 +105,7 @@
       <a class="p-2 link-secondary" href="{% url 'blog_app:sports' %}">Esportes</a>
       <a class="p-2 link-secondary" href="{% url 'blog_app:cinema' %}">Cinema</a>
       <a class="p-2 link-secondary" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
-      <a class="p-2 link-secondary" href="{% url 'blog_app:financia' %}">Finanças</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:financas' %}">Finanças</a>
     </nav>
   </div>
  </div>
@@ -123,7 +123,7 @@
       {% for cinema in categoria_cinema %}
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">{{ cinema.titulo }}</h2>
-        <p class="blog-post-meta">{{ cinema.data }} Por: <strong>{{ cinema.autor }}</strong></p>
+        <p class="blog-post-meta">Por: <strong>{{ cinema.autor }}</strong>. há {{ cinema.data|timesince }} atrás.</p>
 
         <img src="{{ cinema.image.url }}" class="img-fluid" width="500" height="250">
         <br><br>
