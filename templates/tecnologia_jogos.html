@@ -116,23 +116,45 @@
 
   <div class="row g-5">
     <div class="col-md-8">
+      <h3 class="pb-4 mb-4 fst-italic border-bottom">
+        Noticías sobre Tecnologia e Jogos
+      </h3>
+
       
-
-     
       <article class="blog-post">
-        <h2 class="blog-post-title mb-1">{{ object.titulo }}</h2>
-        <p class="blog-post-meta">{{ blog.data }} Por: <strong>{{ blog.autor }}</strong></p>
+        {% for tecnologia in categoria_tecnologia %}
+        <h2 class="blog-post-title mb-1">{{ tecnologia.titulo }}</h2>
+        <p class="blog-post-meta">{{ tecnologia.data }} Por: <strong>{{ tecnologia.autor }}</strong></p>
 
-        <img src="{{ object.image.url }}" class="img-fluid">
+        <img src="{{ tecnologia.image.url }}" class="img-fluid" width="500" height="250">
         <br><br>
-          <p class="fs-4">{{ object.descricao | safe}}</p>
+        <p class="fs-5">{{ tecnologia.mini_descricao }}</p>
+        <a href="{% url 'blog_app:detalhes' tecnologia.id %}" class="stretched-link">Continuar Lendo...</a>
         <hr>
+        
+        {% endfor %}
+
+      <ul class="pagination justify-content-center">
+
+        {% if page_obj.has_previous %}
+          <li class="page-item"><a class="page-link" href="?page=1">&laquo;Primeira</a></li>
+          <li class="page-item"><a class="page-link" href="?page={{page_obj.previous_page_number}}">Anterior</a></li>
+        {% endif %}
+
+        <li class="page-item">
+          <span class="page-link">Página: {{page_obj.number}}</span>
+        </li>
+
+        {% if page_obj.has_next %}
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page.number }}">Próximo</a></li>
+        <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.number_pages }}">Última&raquo;</a></li>
+        {% endif %}
+      </ul>    
 
       </article>
     </div>
-    
-    
-          <!--Aside Bar-->
+
+                        <!--Aside Bar-->
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">

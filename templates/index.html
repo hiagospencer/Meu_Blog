@@ -94,7 +94,7 @@
     <div class="row flex-nowrap justify-content-between align-items-center">
       
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="{% url 'blog_app:blog' %}">Hiago Souza</a>
+        <a class="blog-header-logo text-dark" href="/">Blog Hiago Souza</a>
       </div>
       
     </div>
@@ -102,11 +102,10 @@
 
   <div class="nav-scroller py-1 mb-2">
     <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="#">Esportes</a>
-      <a class="p-2 link-secondary" href="#">Notícias</a>
-      <a class="p-2 link-secondary" href="#">Cinema</a>
-      <a class="p-2 link-secondary" href="#">Tecnologia e Jogos</a>
-      <a class="p-2 link-secondary" href="#">Finanças</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:sports' %}">Esportes</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:cinema' %}">Cinema</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
+      <a class="p-2 link-secondary" href="{% url 'blog_app:financia' %}">Finanças</a>
     </nav>
   </div>
 </div>
@@ -157,6 +156,9 @@
       </article>
     </div>
     
+
+          <!--Aside Bar-->
+
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">

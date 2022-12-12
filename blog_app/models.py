@@ -4,7 +4,6 @@ from ckeditor.fields import RichTextField
 
 LISTA_CATEGORIA = (
     ('esportes', 'Esportes'),
-    ('noticias', 'Notícias'),
     ('cinema', 'Cinema'), 
     ('tecnologia', 'Tecnologia'),
     ('finanças', 'Finanças'),
