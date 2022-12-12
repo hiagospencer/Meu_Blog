@@ -90,13 +90,12 @@
   <body>
     
 <div class="container">
+
   <header class="blog-header lh-1 py-3">
     <div class="row flex-nowrap justify-content-between align-items-center">
-      
       <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="{% url 'blog_app:blog' %}">Hiago Souza</a>
-      </div>
-      
+        <a class="blog-header-logo text-dark" href="/">Blog Hiago Souza</a>
+      </div>      
     </div>
   </header>
 
@@ -158,9 +157,16 @@
 
     <div class="col-md-4">
       <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-light rounded">
-          <h4 class="fst-italic">About</h4>
-          <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+        <div class="p-4 mb-3 bg-light rounded">                   
+          <img src="{% static 'img/logo-space-games.jpg'%}" class="img-fluid" width="300" height="250">
+        </div>
+                    
+        <div class="p-4 mb-3 bg-light rounded">              
+              <img src="{% static 'img/logo-agility.jpg'%}" class="img-fluid" width="300" height="250">
+        </div>
+
+        <div class="p-4 mb-3 bg-dark rounded">
+          <img src="{% static 'img/logo-anchieta.png'%}" class="img-fluid" width="300" height="250">
         </div>
 
         <div class="p-4">
