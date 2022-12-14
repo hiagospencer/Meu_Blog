@@ -28,6 +28,14 @@
 <meta name="theme-color" content="#712cf9">
 
 
+  
+
+
+    
+    <!-- Custom styles for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -81,15 +89,10 @@
       }
     </style>
 
-    
-    <!-- Custom styles for this template -->
-    <link href="https://fonts.googleapis.com/css?family=Playfair&#43;Display:700,900&amp;display=swap" rel="stylesheet">
-    <!-- Custom styles for this template -->
-    <link href="{% static 'css/blog.css' %}" rel="stylesheet">
   </head>
   <body>
     
-<div class="container">
+<main class="container">
   <header class="site-header py-1">
     <div>
       <a href="/"><img src="{% static 'img/logo-blog.png' %}" style="width:100%; height:300px;"></a>
@@ -99,16 +102,16 @@
 
   <div class="site-header py-1 mb-2">
     <nav class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2" href="{% url 'blog_app:blog' %}">Início</a>
       <a class="py-2" href="{% url 'blog_app:sports' %}">Esportes</a>
       <a class="py-2" href="{% url 'blog_app:cinema' %}">Cinema</a>
       <a class="py-2" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
       <a class="py-2" href="{% url 'blog_app:financas' %}">Finanças</a>
-      
     </nav>
     <hr>
   </div>
 
-<main class="container">
+
 
   
 
@@ -130,7 +133,7 @@
         <img src="{{ blog.image.url }}" class="img-fluid" width="500" height="250">
         <br><br>
         <p class="fs-5">{{ blog.mini_descricao }}</p>
-        <a href="{% url 'blog_app:detalhes' blog.id %}" class="stretched-link">Continuar Lendo...</a>
+        <a href="{% url 'blog_app:detalhes' blog.id %}">Continuar Lendo...</a>
         <hr>
         
         {% endfor %}
@@ -182,6 +185,7 @@
 
 
     <div class="col-md-4">
+      <h4 class="fst-italic text-center">Apoio:</h4>
       <div class="position-sticky" style="top: 2rem;">
         <div class="p-4 mb-3 bg-light rounded">
           <img src="{% static 'img/logo-space-games.jpg'%}" class="img-fluid" width="300" height="250">
@@ -199,9 +203,9 @@
         <div class="p-4">
           <h4 class="fst-italic">Contato</h4>
           <ol class="list-unstyled">
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Whatsapp</a></li>
+            <li><a href="https://www.facebook.com/hiaguinhospencer" target="_blank">Facebook</a></li>
+            <li><a href="https://www.instagram.com/hiaguinhospencer/" target="_blank">Instagram</a></li>
+            <li><a href="https://wa.me/5584988638467" target="_blank">Whatsapp</a></li>
           </ol>
         </div>
       </div>
