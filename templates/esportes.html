@@ -90,25 +90,23 @@
   <body>
     
 <div class="container">
-  <header class="blog-header lh-1 py-3">
-    <div class="row flex-nowrap justify-content-between align-items-center">
-      
-      <div class="col-4 text-center">
-        <a class="blog-header-logo text-dark" href="/">Blog Hiago Souza</a>
-      </div>
-      
+  <header class="site-header py-1">
+    <div>
+      <a href="/"><img src="{% static 'img/logo-blog.png' %}" style="width:100%; height:300px;"></a>
     </div>
   </header>
 
-  <div class="nav-scroller py-1 mb-2">
-    <nav class="nav d-flex justify-content-between">
-      <a class="p-2 link-secondary" href="{% url 'blog_app:sports' %}">Esportes</a>
-      <a class="p-2 link-secondary" href="{% url 'blog_app:cinema' %}">Cinema</a>
-      <a class="p-2 link-secondary" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
-      <a class="p-2 link-secondary" href="{% url 'blog_app:financas' %}">Finanças</a>
+
+  <div class="site-header py-1 mb-2">
+    <nav class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2" href="{% url 'blog_app:sports' %}">Esportes</a>
+      <a class="py-2" href="{% url 'blog_app:cinema' %}">Cinema</a>
+      <a class="py-2" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
+      <a class="py-2" href="{% url 'blog_app:financas' %}">Finanças</a>
+      
     </nav>
+    <hr>
   </div>
- </div>
 
 <main class="container">
 
