@@ -1,4 +1,5 @@
 {% load static %}
+{% load social_share %}
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -11,21 +12,16 @@
     <title>Blog - Hiago Souza</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/blog/">
-
-    
-
-    
-
-<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- Favicons -->
-<link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
-<link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
-<link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
-<link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
-<meta name="theme-color" content="#712cf9">
+    <link rel="apple-touch-icon" href="/docs/5.2/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.2/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.2/assets/img/favicons/safari-pinned-tab.svg" color="#712cf9">
+    <link rel="icon" href="/docs/5.2/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#712cf9">
 
 
     <style>
@@ -102,7 +98,7 @@
       <a class="py-2" href="{% url 'blog_app:blog' %}">Início</a>
       <a class="py-2" href="{% url 'blog_app:sports' %}">Esportes</a>
       <a class="py-2" href="{% url 'blog_app:cinema' %}">Cinema</a>
-      <a class="py-2" href="{% url 'blog_app:tecnologia' %}">Tecnologia e Jogos</a>
+      <a class="py-2" href="{% url 'blog_app:tecnologia' %}">Tecnologia</a>
       <a class="py-2" href="{% url 'blog_app:financas' %}">Finanças</a>
     </nav>
     <hr>
@@ -114,8 +110,6 @@
 
   <div class="row g-5">
     <div class="col-md-8">
-      
-
      
       <article class="blog-post">
         <h2 class="blog-post-title mb-1">{{ object.titulo }}</h2>
@@ -125,27 +119,27 @@
         <br><br>
           <p class="fs-4">{{ object.descricao | safe}}</p>
         <hr>
-
+              
       </article>
     </div>
     
     
           <!--Aside Bar-->
 
-    <div class="col-md-4">
-      <h4 class="fst-italic text-center">Apoio:</h4>
-      <div class="position-sticky" style="top: 2rem;">
-        <div class="p-4 mb-3 bg-light rounded">                   
-          <img src="{% static 'img/logo-space-games.jpg'%}" class="img-fluid" width="300" height="250">
-        </div>
-                          
-        <div class="p-4 mb-3 bg-light rounded">              
-          <img src="{% static 'img/logo-agility.jpg'%}" class="img-fluid" width="300" height="250">
-        </div>
-
-        <div class="p-4 mb-3 bg-dark rounded">
-          <img src="{% static 'img/logo-anchieta.png'%}" class="img-fluid" width="300" height="250">
-        </div>
+          <div class="col-md-4">
+            <h4 class="fst-italic text-center">Apoio:</h4>
+            <div class="position-sticky" style="top: 2rem;">
+              <div class="p-4 mb-3 bg-light rounded">                   
+                <a href="https://www.instagram.com/spacegames_imports/" target="_blank"><img src="{% static 'img/logo-space-games.jpg'%}" class="img-fluid" width="300" height="250"></a>
+              </div>
+                                              
+              <div class="p-4 mb-3 bg-light rounded">              
+                <a href="https://www.instagram.com/agilitytelecom_areiabranca/" target="_blank"><img src="{% static 'img/logo-agility.jpg'%}" class="img-fluid" width="300" height="250"></a>
+              </div>
+      
+              <div class="p-4 mb-3 bg-dark rounded">
+                <a href="https://www.instagram.com/clinauto.auto/" target="_blank"><img src="{% static 'img/logo-anchieta.png'%}" class="img-fluid" width="300" height="250"></a>
+              </div>
 
         <div class="p-4">
           <h4 class="fst-italic">Contato</h4>

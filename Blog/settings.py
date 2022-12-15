@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-i^pqrmcgx0b2-mc+pynxnmtp-l*ftjd1rxmp+9*co1prihttq5
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io']
 
 
 # Application definition
@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'blog_app',
     'ckeditor',
+    'django_social_share',
 ]
 
 MIDDLEWARE = [

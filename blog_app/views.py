@@ -8,28 +8,12 @@ from .models import Blog
 class BlogListView(ListView):
     template_name = 'index.html'
     model = Blog
-    paginate_by = 5
+    paginate_by = 10
     
     def get_context_data(self, **kwargs):
         context = super(BlogListView, self).get_context_data(**kwargs)
         post_blog = Blog.objects.order_by('-data')
         context["post_blog"] = post_blog
-
-        paginator = context['paginator']
-        page_numbers_range = 5  # Display 5 page numbers
-        max_index = len(paginator.page_range)
-
-        page = self.request.GET.get('page')
-        current_page = int(page) if page else 1
-
-        start_index = int((current_page - 1) / page_numbers_range) * page_numbers_range
-        end_index = start_index + page_numbers_range
-        if end_index >= max_index:
-            end_index = max_index
-
-        page_range = paginator.page_range[start_index:end_index]
-        context['page_range'] = page_range
-
         return context
 
     
@@ -37,6 +21,7 @@ class BlogListView(ListView):
 class CinemaListView(ListView):
     template_name = 'cinema.html'
     model = Blog
+    paginate_by = 10
     
 
     def get_context_data(self, **kwargs):
