@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'blog_app',
     'ckeditor',
     'django_social_share',
+    'gunicorn',
 ]
 
 MIDDLEWARE = [
